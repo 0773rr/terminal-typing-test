@@ -138,6 +138,9 @@ void input_text(char text[], int place_of_endline_spaces[]){
 	double minutes = ((end.tv_sec - start.tv_sec) + (end.tv_nsec - start.tv_nsec) / 1000000000.0) / 60.0;
 	double wpm = (double)i / 5.0 / minutes;
 	double accuracy = (double)(i - mistakes) / (double)i * 100.0;
+	if (accuracy < 0.0){
+		accuracy = 0.0;
+	}
 	printf("\nwpm %.1f accuracy %.1f", wpm, accuracy);
 }
 
