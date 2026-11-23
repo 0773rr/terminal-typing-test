@@ -144,9 +144,14 @@ void input_text(char text[], int place_of_endline_spaces[]){
 	printf("\nwpm %.1f accuracy %.1f", wpm, accuracy);
 }
 
-int main(){
+int main(int argc, char *argv[]) {
 
-	FILE *file = fopen("paste_your_text_here.txt", "rb");
+	if (argc != 2) {
+		fprintf(stderr, "Select a file on your machine containing text: %s text_file.txt\n", argv[0]);
+		return 1;
+	}
+
+	FILE *file = fopen(argv[1], "rb");
 
 	if (file == NULL) {
 		perror("Error opening the text file");

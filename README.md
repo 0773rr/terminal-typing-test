@@ -8,7 +8,7 @@ gcc typing.c -o typing
 
 ### Run
 ```bash
-./typing
+./typing text_file.txt
 ```
 
 ![](assets/terminal-typing-test.gif)
